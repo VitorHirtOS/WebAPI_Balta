@@ -31,7 +31,7 @@ public class TodoControllers : ControllerBase
     [Route("todos/{id}")]
     public async Task<IActionResult> PostAsync(
         [FromServices] AppDbContext context,
-        [FromBody]CreateTodoViewModel model
+        [FromBody]CreateTodoViewModel model // Podemos pegar através do "Todo" também
     ){
         if(!ModelState.IsValid)
             return BadRequest();
@@ -59,7 +59,7 @@ public class TodoControllers : ControllerBase
 
         public async Task<IActionResult> PutAsync(
         [FromServices] AppDbContext context,
-        [FromBody]CreateTodoViewModel model,
+        [FromBody]CreateTodoViewModel model, // Podemos pegar através do "Todo" também
         [FromRoute] int id
     ){
         if(!ModelState.IsValid)
